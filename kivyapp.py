@@ -14,7 +14,7 @@ import sys
 
 kivy.require("1.10.1")  # make sure people running py file have right version
 
-class ScrollableLabel(ScrooView):
+class ScrollableLabel(ScrollView):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.layout = GridLayout(cols=1, size_hint_y=None)
@@ -30,7 +30,7 @@ class ScrollableLabel(ScrooView):
 
         self.layout.height = self.chat_history.texture_size[1] + 15 
         self.chat_history.height = self.chat_history.texture_size[1]
-        self.chat_history.text_size = (self.chat_history.width*0.98, None)
+        self.chat_history.text_size = (self.chat_history*0.98, None)
 
 
         self.scroll_to(self.scroll_to_point)
